@@ -16,6 +16,11 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement initState
     super.initState();
     notificationServices.requestNotificationsPermissions();
+    notificationServices.isTokenRefresh();
+    notificationServices.getDeviceToken().then((value) {
+      print('Device Token');
+      print(value);
+    });
   }
   @override
   Widget build(BuildContext context) {
